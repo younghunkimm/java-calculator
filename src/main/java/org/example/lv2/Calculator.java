@@ -56,6 +56,14 @@ public class Calculator {
         return result;
     }
 
+    // Calculator 클래스에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능
+    public void removeResult() {
+        // 리스트가 비어있는데 remove(0) 을 호출하면 IndexOutOfBoundsException 발생
+        if (!list.isEmpty()) {
+            list.remove(0);
+        }
+    }
+
     // Getter
     public ArrayList<Integer> getList() {
         return list;
