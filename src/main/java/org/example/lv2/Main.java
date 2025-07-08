@@ -1,5 +1,6 @@
 package org.example.lv2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -24,6 +25,16 @@ public class Main {
             } else {
                 continue;
             }
+
+            // Getter 를 이용해 list 컬렉션을 list 변수에 담는다
+            ArrayList<Integer> list = calculator.getList();
+
+            // 향상된 for 문을 사용해 결과값들이 정상적으로 추가되는지 확인
+            for (int i : list) {
+                System.out.print(i + " ");
+            }
+
+            System.out.println(" ");
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             if (sc.next().equals("exit")) break;
