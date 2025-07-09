@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Calculator {
     // === 속성 ===
-    protected int firstNumber; // 첫 번째 숫자
-    protected int secondNumber; // 두 번째 숫자
-    protected char operator; // 연산자
+    private int firstNumber; // 첫 번째 숫자
+    private int secondNumber; // 두 번째 숫자
+    private char operator; // 연산자
 
     public boolean isOperate = true; // 계산 가능 여부
 
     // 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
-    private static ArrayList<Integer> list = new ArrayList<>();
+    private ArrayList<Integer> list = new ArrayList<>();
 
     // === 생성자 ===
     public Calculator(int firstNumber, int secondNumber, char operator) {
@@ -50,7 +50,7 @@ public class Calculator {
 
         // 연산이 정상적으로 수행됐다면 list 컬렉션에 추가
         if (isOperate) {
-            setList(result);
+            list.add(result);
         }
 
         return result;
@@ -67,10 +67,5 @@ public class Calculator {
     // Getter
     public ArrayList<Integer> getList() {
         return list;
-    }
-
-    // Setter
-    public static void setList(int number) {
-        list.add(number);
     }
 }
