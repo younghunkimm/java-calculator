@@ -23,7 +23,7 @@ public class Main {
                 System.out.println("결과: " + result);
             } catch (InputMismatchException e) {
                 System.out.println("잘못된 입력입니다. 숫자를 입력해주세요.");
-            }  catch (IllegalArgumentException | ArithmeticException e) {
+            } catch (IllegalArgumentException | ArithmeticException e) {
                 System.out.println("오류 발생: " + e.getMessage());
             } catch (Exception e) {
                 System.out.println("알 수 없는 오류가 발생했습니다.");
