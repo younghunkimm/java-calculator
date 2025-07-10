@@ -26,6 +26,14 @@ public class Calculator {
         resultList.add(num);
     }
 
+    // resultList 컬렉션에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능
+    public void removeFirstIndexResult() {
+        // 리스트가 비어있는데 remove(0) 을 호출하면 IndexOutOfBoundsException 발생
+        if (!resultList.isEmpty()) { // 예외 방지
+            resultList.remove(0);
+        }
+    }
+
     // 저장된 연산 결과들 중 사용자가 입력한 값보다 큰 값들을 출력하는 기능
     public List<Double> printExceedingValues(double inputValue) {
         return resultList.stream()
