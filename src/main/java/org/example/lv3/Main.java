@@ -11,6 +11,7 @@ public class Main {
 
         while (true) {
             try {
+                System.out.println("::: 계산 프로그램을 시작합니다. :::");
                 System.out.print("첫 번째 숫자를 입력하세요: ");
                 double num1 = sc.nextDouble();
 
@@ -35,21 +36,31 @@ public class Main {
 
                 System.out.println("연산 결과 저장: " + calculator.getResultList());
 
+                System.out.print("첫 번째 연산 결과를 삭제하시겠습니까? (y/n): ");
+                String removeChoice = sc.nextLine();
+                if (removeChoice.equalsIgnoreCase("y")) {
+                    calculator.removeFirstIndexResult();
+
+                    System.out.println("삭제 완료: " + calculator.getResultList());
+                }
+
                 System.out.print("계속하시겠습니까? (exit 입력 시 종료): ");
                 String continueChoice = sc.nextLine();
                 if (continueChoice.equalsIgnoreCase("exit")) {
-                    System.out.println("프로그램을 종료합니다.");
+                    System.out.println("::: 계산 프로그램을 종료합니다. :::");
                     break;
                 }
             }
         }
 
         try {
+            System.out.println("::: 연산 결과 조회를 시작합니다. :::");
             System.out.print("연산 결과 중 입력한 숫자보다 큰 값들을 조회합니다. 숫자 입력: ");
             double inputValue = sc.nextDouble();
             List<Double> exceedingValuesList = calculator.printExceedingValues(inputValue);
 
             System.out.println(inputValue + " 보다 큰 값들을 조회: " + exceedingValuesList);
+            System.out.println("::: 연산 결과 조회를 종료합니다. :::");
         } catch (InputMismatchException e) {
             System.out.println("잘못된 입력입니다. 숫자를 입력해주세요.");
         }
