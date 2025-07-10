@@ -20,6 +20,8 @@ public class Main {
                 char symbol = sc.next().charAt(0);
 
                 double result = calculator.calculate(num1, num2, symbol);
+                calculator.addResult(result); // 결과값을 담는다.
+
                 System.out.println("결과: " + result);
             } catch (InputMismatchException e) {
                 System.out.println("잘못된 입력입니다. 숫자를 입력해주세요.");
@@ -30,8 +32,10 @@ public class Main {
             } finally {
                 sc.nextLine(); // 버퍼 비우기
 
+                System.out.println("연산 결과 저장: " + calculator.getResultList());
+
                 System.out.print("계속하시겠습니까? (exit 입력 시 종료): ");
-                String continueChoice = sc.next();
+                String continueChoice = sc.nextLine();
                 if (continueChoice.equalsIgnoreCase("exit")) {
                     System.out.println("프로그램을 종료합니다.");
                     break;
