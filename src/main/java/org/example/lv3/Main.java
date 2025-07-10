@@ -1,6 +1,7 @@
 package org.example.lv3;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -41,6 +42,16 @@ public class Main {
                     break;
                 }
             }
+        }
+
+        try {
+            System.out.print("연산 결과 중 입력한 숫자보다 큰 값들을 조회합니다. 숫자 입력: ");
+            double inputValue = sc.nextDouble();
+            List<Double> exceedingValuesList = calculator.printExceedingValues(inputValue);
+
+            System.out.println(inputValue + " 보다 큰 값들을 조회: " + exceedingValuesList);
+        } catch (InputMismatchException e) {
+            System.out.println("잘못된 입력입니다. 숫자를 입력해주세요.");
         }
 
         sc.close(); // Scanner 자원 해제
