@@ -1,4 +1,4 @@
-package org.example.lv3;
+package org.example.lv3.enumeration;
 
 import java.util.Arrays;
 import java.util.function.BiFunction;
@@ -34,10 +34,9 @@ public enum OperatorType {
         return symbol;
     }
 
-    // Getter: 연산자에 해당하는 연산을 수행하는 함수를 가져온다.
     // BiFunction 의 `apply` 메서드가 생성자를 통해 정의된 `Lambda` 로 `@Override` 된다.
-    public BiFunction<Double, Double, Double> getFormula() {
-        return formula;
+    public double apply(double a, double b) {
+        return formula.apply(a, b);
     }
 
     // 사용자에게 입력받은 연산자 기호를 통해 인스턴스를 반환한다.
