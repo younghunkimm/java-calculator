@@ -10,9 +10,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>();
-        List<Double> resultList = new ArrayList<>();
+        ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>(); // 계산기 객체 생성
+        List<Double> resultList = new ArrayList<>(); // 결과값이 담길 리스트 생성
 
+        // running의 값이 false가 되면 while문의 종료된다.
         boolean running = true;
 
         do {
@@ -41,7 +42,7 @@ public class Main {
                         double result = arithmeticCalculator.calculate(num1, num2, symbol);
                         System.out.println("결과값 = " + result);
 
-                        resultList.add(result);
+                        resultList.add(result); // 결과값을 담는다.
                         break;
                     case 2:
                         System.out.println("::: 결과값 조회 시작 :::");
