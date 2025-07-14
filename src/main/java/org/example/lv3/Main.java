@@ -67,9 +67,9 @@ public class Main {
             } catch (InputMismatchException e) {
                 System.out.println("잘못된 입력입니다. 숫자를 입력해주세요.");
             } catch (Exception e) {
-                sc.nextLine(); // 버퍼 비우기
-
                 System.out.println(e.getMessage());
+            } finally {
+                sc.nextLine(); // 버퍼 비우기
             }
         } while (running);
 
